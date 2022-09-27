@@ -1,6 +1,5 @@
 import java.util.Arrays;
 import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class main {
 
@@ -17,7 +16,8 @@ public class main {
         task4();
         task5();
     }
-    private static void task1(){
+
+    private static void task1() {
         int[] array = {5, 6, 3, 3, -1, 4};
         System.out.println(minAxisLength(array));
     }
@@ -34,30 +34,24 @@ public class main {
      */
     private static void task2() {
 
-        int zi[];
         int n = 50;
-        zi = new int[n];
         double l = 0;
-        for (int i = 0; i < n; i++) zi[i] = i + 1;
-
         for (int i = 0; i < n; i++) l += i * i;
-
         System.out.printf(String.valueOf(Math.sqrt(l)));
-
-
     }
 
     /**
      * task3
      * #81
-     * Дана последовательность натуральных чисел а1, a2, ..., а15. Определить, есть ли в последовательности хотя бы одна пара соседних нечетных чисел. В случае положительного ответа определить порядковые номера чисел первой из таких пар.
+     * Дана последовательность натуральных чисел а1, a2, ..., а15. Определить, есть ли в последовательности хотя бы одна пара соседних нечетных чисел.
+     * В случае положительного ответа определить порядковые номера чисел первой из таких пар.
      */
     private static void task3() {
         int[] arr = {1, 2, 5, 8, 9, 2, 4, 5, 3, 1, 2, 8};
         boolean flag = true;
         for (int i = 0; i < arr.length - 1; i++) {
             if (arr[i] % 2 != 0) {
-                if ((arr[i] == arr[i + 1] + 2) || (arr[i + 1] == arr[i] + 2)) {
+                if ((arr[i] == arr[i + 1] + 2)) {
                     System.out.printf("\nДва соседних нечетных числа %d и %d в позиции %d", arr[i], arr[i + 1], i);
                     flag = false;
                     break;
@@ -81,13 +75,16 @@ public class main {
         arr1 = removeLastElement(arr1);
         System.out.println("\n" + Arrays.toString(arr1));
     }
+
     public static double[] removeLastElement(double[] arr1) {
         return Arrays.copyOf(arr1, arr1.length - 1);
     }
+
     /**
      * task5
      * #131
-     * Дана последовательность целых чисел а1, а2, ..., an. Образовать новую последовательность, выбросив из исходной те члены, которые равны min (а1, а2, ..., an).
+     * Дана последовательность целых чисел а1, а2, ..., an. Образовать новую последовательность, выбросив из исходной те члены,
+     * которые равны min (а1, а2, ..., an).
      */
     public static void task5() {
         int n = 15;
